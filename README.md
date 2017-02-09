@@ -1,1 +1,1 @@
-# Custom Alpine docker image with gosu, tini and ca-certificates
+# Custom Alpine docker image with gosu, su-exec, tini and ca-certificates
