@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.4
 
 RUN apk --update --no-cache add ca-certificates \
                                 openssl
