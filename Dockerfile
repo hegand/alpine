@@ -13,6 +13,6 @@ RUN set -x \
     && gosu nobody true \
     && apk del .gosu-deps dpkg openssl
     
-RUN apk add --no-cache --update tini
+RUN apk add --no-cache --update tini su-exec
     
 ENTRYPOINT ["/sbin/tini", "--"]
