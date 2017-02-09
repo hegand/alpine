@@ -3,6 +3,7 @@ FROM alpine:edge
 RUN apk --update --no-cache add ca-certificates
     
 ENV GOSU_VERSION 1.10
+ENV GPG_TTY /dev/console
 RUN set -x \
     && apk add --no-cache --virtual .gosu-deps \
         dpkg \
@@ -17,7 +18,7 @@ RUN set -x \
     && rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc \
     && chmod +x /usr/local/bin/gosu \
     && gosu nobody true \
-    && apk del .gosu-deps gnupg openssl
+    && apk del .gosu-deps dpkg gnupg openssl
     
 RUN apk add --no-cache --update tini
     
